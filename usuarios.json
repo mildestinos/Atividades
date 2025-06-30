@@ -1,0 +1,22 @@
+[
+    {
+        "Nome": "eric",
+        "Data de Nascimento": "16/03/176",
+        "E-mail": "eric@gmail.com",
+        "CPF": "88888888888",
+        "Telefone": "999999999",
+        "Gênero": "marculino",
+        "Data de Cadastro": "30/06/2025",
+        "Hora de Cadastro": "15:51:14"
+    },
+    {
+        "Nome": "Carlos",
+        "Data de Nascimento": "11/04/1970",
+        "E-mail": "carlos@gmail.com",
+        "CPF": "88888855544",
+        "Telefone": "33333333333",
+        "Gênero": "Masculino",
+        "Data de Cadastro": "30/06/2025",
+        "Hora de Cadastro": "16:15:50"
+    }
+]
