@@ -18,5 +18,15 @@
         "Gênero": "Masculino",
         "Data de Cadastro": "30/06/2025",
         "Hora de Cadastro": "16:15:50"
+    },
+    {
+        "Nome": "Joaqium",
+        "Data de Nascimento": "11/11/1965",
+        "E-mail": "joaquim@gmail.com",
+        "CPF": "55522244477",
+        "Telefone": "6699887744",
+        "Gênero": "Masculino",
+        "Data de Cadastro": "30/06/2025",
+        "Hora de Cadastro": "21:31:00"
     }
 ]

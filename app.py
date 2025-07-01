@@ -100,39 +100,40 @@ def limpar_campos():
     entry_telefone.delete(0, tk.END)
     entry_genero.delete(0, tk.END)
 
-# Interface gráfica
+# Interface gráfica com cores
 janela = tk.Tk()
 janela.title("Cadastro de Usuários")
+janela.configure(bg="#E0F7FA")  # Fundo azul claro
 
-tk.Label(janela, text="Nome:").grid(row=0, column=0)
-entry_nome = tk.Entry(janela)
-entry_nome.grid(row=0, column=1)
+# Função para criar rótulos e entradas com cor
+def criar_label_entrada(texto, linha):
+    tk.Label(janela, text=texto, bg="#E0F7FA", font=("Arial", 10)).grid(row=linha, column=0, sticky='w', padx=10, pady=4)
+    entrada = tk.Entry(janela, width=30)
+    entrada.grid(row=linha, column=1, padx=10, pady=4)
+    return entrada
 
-tk.Label(janela, text="Data de Nascimento:").grid(row=1, column=0)
-entry_nascimento = tk.Entry(janela)
-entry_nascimento.grid(row=1, column=1)
+entry_nome = criar_label_entrada("Nome:", 0)
+entry_nascimento = criar_label_entrada("Data de Nascimento:", 1)
+entry_email = criar_label_entrada("E-mail:", 2)
+entry_cpf = criar_label_entrada("CPF:", 3)
+entry_telefone = criar_label_entrada("Telefone:", 4)
+entry_genero = criar_label_entrada("Gênero:", 5)
 
-tk.Label(janela, text="E-mail:").grid(row=2, column=0)
-entry_email = tk.Entry(janela)
-entry_email.grid(row=2, column=1)
+# Estilo dos botões
+btn_style = {
+    "bg": "#0288D1",  # Azul forte
+    "fg": "white",
+    "padx": 10,
+    "pady": 5,
+    "font": ("Arial", 10, "bold"),
+    "width": 15
+}
 
-tk.Label(janela, text="CPF:").grid(row=3, column=0)
-entry_cpf = tk.Entry(janela)
-entry_cpf.grid(row=3, column=1)
-
-tk.Label(janela, text="Telefone:").grid(row=4, column=0)
-entry_telefone = tk.Entry(janela)
-entry_telefone.grid(row=4, column=1)
-
-tk.Label(janela, text="Gênero:").grid(row=5, column=0)
-entry_genero = tk.Entry(janela)
-entry_genero.grid(row=5, column=1)
-
-tk.Button(janela, text="Cadastrar", command=cadastrar_usuario).grid(row=6, column=0)
-tk.Button(janela, text="Listar", command=listar_usuarios).grid(row=6, column=1)
-tk.Button(janela, text="Alterar", command=alterar_usuario).grid(row=7, column=0)
-tk.Button(janela, text="Excluir", command=excluir_usuario).grid(row=7, column=1)
-tk.Button(janela, text="Sortear", command=sortear_usuario).grid(row=8, columnspan=2)
+tk.Button(janela, text="Cadastrar", command=cadastrar_usuario, **btn_style).grid(row=6, column=0, padx=10, pady=6)
+tk.Button(janela, text="Listar", command=listar_usuarios, **btn_style).grid(row=6, column=1, padx=10, pady=6)
+tk.Button(janela, text="Alterar", command=alterar_usuario, **btn_style).grid(row=7, column=0, padx=10, pady=6)
+tk.Button(janela, text="Excluir", command=excluir_usuario, **btn_style).grid(row=7, column=1, padx=10, pady=6)
+tk.Button(janela, text="Sortear", command=sortear_usuario, **btn_style).grid(row=8, columnspan=2, pady=10)
 
 carregar_dados()
 janela.mainloop()
